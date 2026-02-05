@@ -1,0 +1,406 @@
+---
+const faqs = [
+  {
+    question: "¿Cómo funciona el código de referencia único?",
+    answer: "Al registrarte, recibes un código único (ejemplo: JP-12345). Solo incluye este código en el concepto de tu transferencia y nuestro sistema te identificará automáticamente. Es rápido, seguro y elimina cualquier error de identificación."
+  },
+  {
+    question: "¿Cuánto tiempo tarda el procesamiento de mi pago?",
+    answer: "La mayoría de transacciones se procesan el mismo día. Una vez que realizas tu depósito, nuestros operadores lo registran en tiempo real y recibirás notificaciones en cada etapa hasta que tu pago esté completado."
+  },
+  {
+    question: "¿Cómo se calculan las comisiones?",
+    answer: "Las comisiones se calculan automáticamente según la configuración de tu cuenta. El sistema te muestra de forma transparente el monto depositado, la comisión aplicada y el monto exacto que recibirás. Sin sorpresas."
+  },
+  {
+    question: "¿Puedo agregar múltiples cuentas bancarias?",
+    answer: "¡Absolutamente! Puedes registrar todas las cuentas bancarias que necesites desde tu panel. Al momento del pago, recibirás el dinero en la cuenta que hayas designado. Tienes control total."
+  },
+  {
+    question: "¿Es seguro usar AYNIPAY?",
+    answer: "Tu seguridad es nuestra prioridad. Utilizamos encriptación de nivel bancario, auditoría completa de todas las transacciones y cumplimos con los más altos estándares de seguridad de la industria fintech."
+  },
+  {
+    question: "¿Qué hago si tengo un problema o duda?",
+    answer: "Nuestro sistema de soporte 24/7 está siempre disponible. Crea un ticket directamente desde tu panel y nuestro equipo responderá de inmediato. Puedes hacer seguimiento de cada ticket hasta su resolución completa."
+  },
+  {
+    question: "¿Puedo ver el historial de todas mis transacciones?",
+    answer: "Sí, tu panel incluye acceso completo a tu historial de transacciones con filtros avanzados. Puedes ver estado, montos, fechas, números de operación y todos los detalles de cada pago en tiempo real."
+  },
+  {
+    question: "¿Hay costos ocultos?",
+    answer: "Cero costos ocultos. Todo es transparente desde el primer momento. La comisión se muestra claramente antes de confirmar cualquier transacción. Lo que ves es lo que pagas."
+  }
+];
+---
+
+<section class="faq" id="faq">
+  <div class="faq-container">
+    <div class="faq-header">
+      <span class="section-tag">FAQ</span>
+      <h2 class="section-title">
+        Preguntas <span class="highlight">Frecuentes</span>
+      </h2>
+      <p class="section-description">
+        Todo lo que necesitas saber sobre AYNIPAY
+      </p>
+    </div>
+
+    <div class="faq-grid">
+      <div class="faq-list">
+        {faqs.map((faq, index) => (
+          <div class="faq-item" data-index={index}>
+            <button class="faq-question" aria-expanded="false">
+              <span class="question-text">{faq.question}</span>
+              <span class="question-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </button>
+            <div class="faq-answer">
+              <div class="answer-content">
+                <p>{faq.answer}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="faq-sidebar">
+        <div class="contact-card">
+          <div class="contact-icon">💬</div>
+          <h3>¿No encuentras tu respuesta?</h3>
+          <p>Nuestro equipo está listo para ayudarte</p>
+          <a href="#contacto" class="contact-button">
+            <span>Contactar Soporte</span>
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+
+        <div class="stats-card">
+          <div class="stat">
+            <div class="stat-value">98%</div>
+            <div class="stat-label">Satisfacción</div>
+          </div>
+          <div class="stat">
+            <div class="stat-value">&lt;5min</div>
+            <div class="stat-label">Respuesta</div>
+          </div>
+          <div class="stat">
+            <div class="stat-value">24/7</div>
+            <div class="stat-label">Disponible</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .faq {
+    padding: 8rem 2rem;
+    position: relative;
+    background: 
+      radial-gradient(circle at 20% 30%, rgba(0, 169, 157, 0.05) 0%, transparent 40%),
+      radial-gradient(circle at 80% 70%, rgba(26, 77, 109, 0.05) 0%, transparent 40%);
+  }
+
+  .faq-container {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .faq-header {
+    text-align: center;
+    margin-bottom: 5rem;
+  }
+
+  .section-tag {
+    display: inline-block;
+    padding: 0.5rem 1.25rem;
+    background: rgba(0, 169, 157, 0.1);
+    border: 1px solid rgba(0, 169, 157, 0.3);
+    border-radius: 50px;
+    color: var(--primary-light);
+    font-weight: 700;
+    font-size: 0.875rem;
+    letter-spacing: 0.1em;
+    margin-bottom: 1.5rem;
+  }
+
+  .section-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 4rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.02em;
+  }
+
+  .highlight {
+    background: linear-gradient(135deg, var(--primary), var(--accent-pink));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .section-description {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+  }
+
+  .faq-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .faq-item {
+    background: rgba(20, 20, 31, 0.5);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .faq-item:hover {
+    border-color: var(--primary);
+  }
+
+  .faq-item.active {
+    border-color: var(--primary);
+    box-shadow: 0 8px 30px rgba(0, 169, 157, 0.2);
+  }
+
+  .faq-question {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    background: none;
+    border: none;
+    color: var(--text-primary);
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.125rem;
+    font-weight: 600;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+
+  .faq-question:hover {
+    color: var(--primary-light);
+  }
+
+  .question-icon {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 169, 157, 0.1);
+    border-radius: 8px;
+    transition: all 0.3s;
+  }
+
+  .faq-item.active .question-icon {
+    background: var(--primary);
+    transform: rotate(180deg);
+  }
+
+  .question-icon svg {
+    transition: transform 0.3s;
+  }
+
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .faq-item.active .faq-answer {
+    max-height: 500px;
+  }
+
+  .answer-content {
+    padding: 0 2rem 1.5rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    font-size: 1rem;
+  }
+
+  .faq-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    position: sticky;
+    top: 120px;
+  }
+
+  .contact-card {
+    padding: 2.5rem;
+    background: linear-gradient(135deg, rgba(0, 169, 157, 0.1), rgba(26, 77, 109, 0.1));
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    backdrop-filter: blur(10px);
+    text-align: center;
+  }
+
+  .contact-icon {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 1.5rem;
+    background: linear-gradient(135deg, rgba(0, 169, 157, 0.2), rgba(26, 77, 109, 0.2));
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+  }
+
+  .contact-card h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+  }
+
+  .contact-card p {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+  }
+
+  .contact-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, var(--primary), var(--accent-pink));
+    color: white;
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: 700;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .contact-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 40px rgba(0, 169, 157, 0.4);
+  }
+
+  .stats-card {
+    padding: 2rem;
+    background: rgba(20, 20, 31, 0.5);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .stat {
+    text-align: center;
+  }
+
+  .stat-value {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.75rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--primary), var(--accent-pink));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 0.25rem;
+  }
+
+  .stat-label {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+  }
+
+  @media (max-width: 1024px) {
+    .section-title {
+      font-size: 3rem;
+    }
+
+    .faq-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .faq-sidebar {
+      position: static;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+
+    .stats-card {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .faq {
+      padding: 5rem 1.5rem;
+    }
+
+    .section-title {
+      font-size: 2rem;
+    }
+
+    .faq-question {
+      padding: 1.25rem 1.5rem;
+      font-size: 1rem;
+    }
+
+    .faq-sidebar {
+      grid-template-columns: 1fr;
+    }
+
+    .contact-card {
+      padding: 2rem;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const faqItems = document.querySelectorAll('.faq-item');
+    
+    faqItems.forEach(item => {
+      const question = item.querySelector('.faq-question');
+      
+      question?.addEventListener('click', () => {
+        const isActive = item.classList.contains('active');
+        
+        // Close all items
+        faqItems.forEach(i => {
+          i.classList.remove('active');
+          const btn = i.querySelector('.faq-question');
+          btn?.setAttribute('aria-expanded', 'false');
+        });
+        
+        // Toggle current item
+        if (!isActive) {
+          item.classList.add('active');
+          question.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+  });
+</script>

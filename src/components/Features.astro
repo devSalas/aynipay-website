@@ -1,0 +1,398 @@
+---
+const features = [
+  {
+    icon: "🔐",
+    title: "Código Único Personal",
+    description: "Sistema de identificación inteligente que elimina errores y agiliza cada transacción.",
+    color: "primary"
+  },
+  {
+    icon: "⚡",
+    title: "Cálculo Instantáneo",
+    description: "Comisiones calculadas automáticamente en tiempo real. Sin sorpresas, total transparencia.",
+    color: "pink"
+  },
+  {
+    icon: "📊",
+    title: "Dashboard Intuitivo",
+    description: "Visualiza todas tus métricas, estadísticas y transacciones en una interfaz diseñada para ti.",
+    color: "cyan"
+  },
+  {
+    icon: "🔔",
+    title: "Notificaciones Inteligentes",
+    description: "Mantente informado al instante con alertas en tiempo real por email y en tu panel.",
+    color: "amber"
+  },
+  {
+    icon: "🏦",
+    title: "Multi-Cuenta",
+    description: "Gestiona múltiples cuentas bancarias y elige libremente dónde recibir cada pago.",
+    color: "green"
+  },
+  {
+    icon: "🔍",
+    title: "Trazabilidad Total",
+    description: "Auditoría completa con historial detallado de cada transacción. Nada se pierde.",
+    color: "purple"
+  }
+];
+---
+
+<section class="features" id="funciones">
+  <div class="features-container">
+    <div class="features-header">
+      <span class="section-tag">CARACTERÍSTICAS</span>
+      <h2 class="section-title">
+        Tecnología que <span class="highlight">Transforma</span>
+      </h2>
+      <p class="section-description">
+        Cada función diseñada para hacer tu vida más fácil y tus transacciones más seguras
+      </p>
+    </div>
+
+    <div class="features-grid">
+      {features.map((feature, index) => (
+        <div class="feature-card" data-color={feature.color} style={`animation-delay: ${index * 0.1}s`}>
+          <div class="card-glow"></div>
+          <div class="card-content">
+            <div class="feature-icon">
+              {feature.icon}
+            </div>
+            <h3 class="feature-title">{feature.title}</h3>
+            <p class="feature-description">{feature.description}</p>
+            <div class="feature-arrow">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <div class="features-cta">
+      <div class="cta-card">
+        <div class="cta-content">
+          <h3>¿Listo para experimentar el futuro?</h3>
+          <p>Únete a cientos de usuarios que ya confían en AYNIPAY</p>
+        </div>
+        <a href="#contacto" class="cta-button">
+          <span>Comenzar Ahora</span>
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .features {
+    padding: 8rem 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .features::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(0, 169, 157, 0.1) 0%, transparent 70%);
+    filter: blur(80px);
+  }
+
+  .features-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .features-header {
+    text-align: center;
+    margin-bottom: 5rem;
+  }
+
+  .section-tag {
+    display: inline-block;
+    padding: 0.5rem 1.25rem;
+    background: rgba(0, 169, 157, 0.1);
+    border: 1px solid rgba(0, 169, 157, 0.3);
+    border-radius: 50px;
+    color: var(--primary-light);
+    font-weight: 700;
+    font-size: 0.875rem;
+    letter-spacing: 0.1em;
+    margin-bottom: 1.5rem;
+  }
+
+  .section-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 4rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.02em;
+  }
+
+  .highlight {
+    background: linear-gradient(135deg, var(--primary), var(--accent-pink));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .section-description {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.8;
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+  }
+
+  .feature-card {
+    position: relative;
+    padding: 2.5rem;
+    background: rgba(20, 20, 31, 0.5);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    backdrop-filter: blur(10px);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    overflow: hidden;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+  }
+
+  .feature-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, transparent 0%, rgba(99, 102, 241, 0.1) 100%);
+    opacity: 0;
+    transition: opacity 0.4s;
+  }
+
+  .feature-card:hover::before {
+    opacity: 1;
+  }
+
+  .feature-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--primary);
+    box-shadow: 0 20px 60px rgba(99, 102, 241, 0.3);
+  }
+
+  .feature-card[data-color="pink"]:hover {
+    border-color: var(--accent-pink);
+    box-shadow: 0 20px 60px rgba(236, 72, 153, 0.3);
+  }
+
+  .feature-card[data-color="cyan"]:hover {
+    border-color: var(--accent-cyan);
+    box-shadow: 0 20px 60px rgba(6, 182, 212, 0.3);
+  }
+
+  .feature-card[data-color="amber"]:hover {
+    border-color: var(--accent);
+    box-shadow: 0 20px 60px rgba(245, 158, 11, 0.3);
+  }
+
+  .feature-card[data-color="green"]:hover {
+    border-color: var(--secondary);
+    box-shadow: 0 20px 60px rgba(16, 185, 129, 0.3);
+  }
+
+  .feature-card[data-color="purple"]:hover {
+    border-color: #a855f7;
+    box-shadow: 0 20px 60px rgba(168, 85, 247, 0.3);
+  }
+
+  .card-glow {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.3) 0%, transparent 50%);
+    opacity: 0;
+    transition: opacity 0.4s;
+  }
+
+  .feature-card:hover .card-glow {
+    opacity: 1;
+  }
+
+  .card-content {
+    position: relative;
+    z-index: 1;
+  }
+
+  .feature-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, rgba(0, 169, 157, 0.2), rgba(26, 77, 109, 0.2));
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .feature-card:hover .feature-icon {
+    transform: scale(1.1) rotate(5deg);
+  }
+
+  .feature-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+  }
+
+  .feature-description {
+    color: var(--text-secondary);
+    line-height: 1.8;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .feature-arrow {
+    color: var(--primary);
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .feature-card:hover .feature-arrow {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .features-cta {
+    margin-top: 4rem;
+  }
+
+  .cta-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3rem;
+    background: linear-gradient(135deg, rgba(0, 169, 157, 0.1), rgba(26, 77, 109, 0.1));
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    backdrop-filter: blur(10px);
+    gap: 2rem;
+  }
+
+  .cta-content h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+
+  .cta-content p {
+    color: var(--text-secondary);
+    font-size: 1.125rem;
+  }
+
+  .cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1.25rem 2.5rem;
+    background: linear-gradient(135deg, var(--primary), var(--accent-pink));
+    color: white;
+    text-decoration: none;
+    border-radius: 14px;
+    font-weight: 700;
+    font-size: 1.125rem;
+    white-space: nowrap;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 40px rgba(99, 102, 241, 0.4);
+  }
+
+  @media (max-width: 1024px) {
+    .section-title {
+      font-size: 3rem;
+    }
+
+    .features-grid {
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+
+    .cta-card {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .features {
+      padding: 5rem 1.5rem;
+    }
+
+    .section-title {
+      font-size: 2rem;
+    }
+
+    .section-description {
+      font-size: 1rem;
+    }
+
+    .features-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    .feature-card {
+      padding: 2rem;
+    }
+
+    .cta-card {
+      padding: 2rem;
+    }
+
+    .cta-content h3 {
+      font-size: 1.5rem;
+    }
+
+    .cta-button {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+</style>
