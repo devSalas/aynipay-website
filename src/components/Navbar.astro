@@ -2,9 +2,9 @@
 
 ---
 
-<nav class="navbar">
+<nav class="fixed top-0 left-0 right-0 z-50 navbar">
   <div class="nav-container">
-    <a href="/" class="logo ">
+    <a href="/" class="logo">
       <img src="/aynipay-logo.svg" alt="AYNIPAY Logo" class="logo-img " />
     </a>
 
@@ -82,11 +82,18 @@
     gap: 0.75rem;
     text-decoration: none;
     font-weight: 800;
-    font-size: 1rem;
+    font-size: 0.5rem;
     color: var(--text-primary);
     font-family: "Space Grotesk", sans-serif;
     transition: transform 0.3s;
   }
+
+    @media (min-width:768px) {
+      .logo{
+        font-size: 1.25rem;
+      }
+    }
+  
 
   .logo:hover {
     transform: translateY(-2px);
@@ -113,6 +120,7 @@
       transform: scale(1.1);
     }
   }
+
 
   .nav-links {
     display: flex;
