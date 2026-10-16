@@ -212,3 +212,7 @@ Para consultas o soporte técnico, contacta al equipo de desarrollo.
 ---
 
 **Hecho con ⚡ y mucho café**
+
+## Ecosistema
+
+- [Commons Protocol](https://github.com/TerexitariusStomp/commons-protocol) — mercado de código abierto de bienes comunes donde la experiencia de aynipay (landing, comunidad, fondos) continúa integrada al protocolo Commons.
